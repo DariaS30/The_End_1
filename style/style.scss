@@ -1,0 +1,639 @@
+@use './colors';
+@use './mixins';
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style-type: none;
+    border: none;
+}
+
+.back{
+    background: colors.$gradient-supersoft;
+    border-radius: 0px 0px 12px 12px;
+    position: relative;
+}
+
+header{
+    @include mixins.flex(center, unset, 0, column);
+}
+
+.first-row{
+    @include mixins.flex(space-between, center, 0, row);
+    background: colors.$main-rgb;
+    padding: 10px 0;
+    width: 100%;
+
+    &__phone-number{
+        padding-right: 15px;
+        @include mixins.Montserrat(16px, 700, normal);
+        color: colors.$white;
+    }
+    &__address{
+        @include mixins.Montserrat(16px, 400, normal);
+        color: colors.$white;
+        text-align: right;
+    }
+
+}
+
+.languages{
+    @include mixins.flex(center, flex-start, 0px, row);
+    padding-left: 15px;
+}
+
+.link{
+    @include mixins.Montserrat(12px, 700, normal);
+    letter-spacing: 1px;
+    color: colors.$white;
+}
+
+.item{
+    text-align: center;
+    border: 1px colors.$main-rgb;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    padding: 5px 7px;
+    &:hover{
+        background: colors.$accent;
+    }
+}
+
+.second-row{
+    @include mixins.flex(center, center, 140px, row);
+}
+
+.menu{
+    position: relative;
+    cursor: pointer;
+    &:hover{
+        .dropdown{
+            display: block;
+        }
+    }
+}
+
+.dropdown{
+    position: absolute;
+    display: none;
+    top: 32px;
+    left: -72px;
+    &__part{
+        @include mixins.Montserrat(16px, 700, normal);
+        text-align: center;
+        color: colors.$white;
+        padding: 8px;
+        transition: background-color 0.3s ease;
+        
+        &:hover{
+            color: colors.$accent;
+            text-decoration: underline;
+        }
+        
+    }
+    &:hover{
+        display: block;
+    }
+}
+
+.e-commerce{
+    @include mixins.flex(center, center, 28px, column);
+    padding: 30px;
+    text-align: center;
+
+    &__title{
+        @include mixins.Montserrat(30px, 700, normal);
+        background: colors.$gradient-red-text;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    &__about{
+        @include mixins.Montserrat(19px, 400, 30px);
+        color: colors.$white;
+    }
+    &__btn{
+        border-radius: 12px;
+        background: colors.$regular;
+        box-shadow: 0px 0px 20px 0px colors.$regular-rgb;
+        @include mixins.Montserrat(16px, 700, normal);
+        color: colors.$white;
+        padding: 18px 30px;
+    }
+}
+
+.services{
+    @include mixins.flex(center, flex-start, 0, column);
+    margin: 0 30px;
+    border-top: 4px solid colors.$border-rgb;
+    max-width: 100%;
+    
+    &__title{
+        width: 14.5em;
+        @include mixins.Montserrat(22px, 700, normal);
+        color: colors.$white;
+        padding: 30px 0;
+    }
+    &__border{
+        position: absolute;
+        width: 80%;
+        border: 6px solid colors.$light-grey;
+        border-radius: 0px 0px 12px 12px;
+        margin-bottom: -67.1em;
+    }
+    &__border-white{
+        position: absolute;
+        width: 70%;
+        border: 6px solid colors.$whiteF2;
+        border-radius: 0px 0px 12px 12px;
+        margin-bottom: -68.5em;
+        left: 3.2em;
+    }
+}
+.addition{
+    margin-bottom: 65px;
+    @include mixins.flex(flex-start, flex-start, 15px, column);
+}
+.menu{
+    @include mixins.flex(space-between, flex-start, 15px, column);
+    flex-wrap: wrap;
+
+    &__benefit{
+        @include mixins.flex(flex-start, flex-start, 8px, row);
+        @include mixins.Montserrat(18px, 400, 26px);
+        color: colors.$white;
+        width: 16.8em;
+    }
+
+}
+
+.publications, footer{
+    background: colors.$bg;
+}
+
+.publications{
+    @include mixins.flex(center, flex-start, 30px, column);
+    margin-top: 100px;
+}
+
+.origin{
+    padding-left: 30px;
+    &__subtitle{
+        @include mixins.Montserrat(30px, 700, normal);
+        background: colors.$gradient-red-text;
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+.main{
+    @include mixins.flex(unset, unset, 0px, unset);
+    align-items: center;
+    &__title{
+        @include mixins.Montserrat(14px, 700, normal);
+        color: colors.$regular;
+        letter-spacing: 1px;
+    }
+}
+
+.block{
+    @include mixins.flex(center, flex-start, 0px, column);
+}
+.img{
+    padding: 0 30px;
+}
+.cover3{
+    padding: 0 30px;
+}
+
+.txt{
+    padding: 30px 60px;
+    @include mixins.flex(unset, unset, 15px, column);
+    width: 16em;
+    
+    &__date{
+        @include mixins.Montserrat(12px, 700, normal);
+        color: colors.$text;
+    }
+    &__story{
+        @include mixins.Montserrat(14px, 400, 22px);
+        color: colors.$black;
+        padding-top: 15px;
+    }
+}
+
+footer{
+    @include mixins.flex(center, center, 20px, column);
+    padding: 30px;
+}
+
+.address{
+    @include mixins.flex(center, center, 14px, column);
+
+    &__info{
+        @include mixins.Montserrat(16px, 400, normal);
+        color: colors.$main;
+    }
+    &__link{
+        @include mixins.Montserrat(12px, 700, normal);
+        color: colors.$regular;
+        text-transform: uppercase;
+        padding-bottom: 21px;
+    }
+}
+
+.contacts{
+    @include mixins.flex(center, center, 10px, column);
+
+    &__phone-number{
+        @include mixins.Montserrat(16px, 700, normal);
+        color: colors.$main-alt;
+    }
+    &__email{
+        @include mixins.Montserrat(16px, 700, normal);
+        color: colors.$regular;
+    }
+
+    &__foot{
+        @include mixins.Montserrat(16px, 400, normal);
+        color: colors.$text;
+        padding-top: 20px;
+    }
+}
+
+@media screen and (min-width: 0px) and (max-width: 700px){
+    .first-row{
+        &__svg, &__address{
+            display: none;
+        }
+    }
+    .second-row{
+        &__svg-resize{
+            display: none;
+        }
+    }
+    .img-resize{
+        display: none;
+    }
+    .address{
+        &__point{
+            display: none;
+        }
+    }
+    .contacts{
+        &__point{
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width: 700px) and (max-width: 1000px){
+    header{
+        padding: 50px 60px;
+    }
+    .first-row{
+       background: none;
+       @include mixins.flex(flex-start, center, 6px, unset);
+       &__phone-number{
+        padding: 0;
+       }
+    }
+    .languages{
+        padding: 0;
+    }
+    .second-row{
+        @include mixins.flex(flex-start, flex-start, 0, column);
+        &__svg{
+            display: none;
+        }
+        &__svg-resize{
+            padding: 15px 0;
+        }
+    }
+
+    .ham-menu{
+        @include mixins.flex(flex-start, unset, 15px, row);
+        &__svg{
+            display: none;
+        }
+    }
+    .menu{
+        position: relative;
+        cursor: pointer;
+        &:hover{
+            .dropdown{
+                @include mixins.flex(flex-start, unset, 15px, row);
+            }
+        }
+    }
+    .dropdown{
+        @include mixins.flex(flex-start, unset, 15px, row);
+        padding-top: 20px;
+        position: absolute;
+        width: 40em;
+        left: 0;
+        top: 0;
+        &__part{
+            padding: 0;
+            display: inline-block;
+        }
+    }
+    .e-commerce{
+        padding: 0 60px;
+        margin-bottom: 60px;
+        margin-top: 60px;
+        &__about{
+            width: 34.5em;
+        }
+    }
+    .services{
+        margin: 0 60px;
+        &__border{
+            margin-bottom: -37.4em;
+        }
+        &__border-white{
+            margin-bottom: -38.8em;
+            left: 6em;
+        }
+    }
+    .addition{
+        @include mixins.flex(center, unset, 60px, row);
+    }
+    .menu{
+        &__benefit{
+            width: 294px;
+        }
+    }
+    .publications{
+        margin: 0 60px;
+        margin-top: 100px;
+    }
+    .row{
+        @include mixins.flex(flex-start, flex-start, 30px, row);
+    }
+    .img{
+        padding: 0;
+        width: 309px;
+        height: 200px;
+    }
+    .txt{
+        padding: 26px;
+    }
+    .block-size{
+        @include mixins.flex(flex-start, flex-start, 0, column);
+        
+    }
+    .cover3{
+        display: none;
+    }
+    .story{
+        width: 42.7em;
+    }
+    .origin{
+        padding: 0;
+    }
+    footer{
+        margin: 0 60px;
+        margin-top: 60px;
+    }
+    .part{
+        @include mixins.flex(flex-start, flex-start, 20px, column);
+    }
+    .address, .contacts{
+        @include mixins.flex(center, center, 10px, row);
+        &__link{
+            padding: 0;
+        }
+    }   
+}
+@media screen and (min-width: 1000px) and (max-width: 1950px){
+    header{
+        padding: 0 60px;
+        padding-top: 50px;
+    }
+    .first-row{
+        @include mixins.flex(flex-end, center, 6px, row);
+        background: none;
+        &__phone-number{
+            padding: 0;
+        }
+    }
+    .second-row{
+        position: relative;
+        &__svg-resize{
+            position: absolute;
+            top: -32px;
+            left: 30px;
+        }
+    }
+    .second-row, .ham-menu{
+        &__svg{
+            display: none;
+        }
+    }
+    .menu{
+        position: relative;
+        cursor: pointer;
+        &:hover{
+            .dropdown{
+                @include mixins.flex(flex-start, unset, 15px, row);
+            }
+        }
+    }
+    .dropdown{
+        @include mixins.flex(flex-end, center, 15px, row);
+        padding-top: 0;
+        width: 26em;
+        position: absolute;
+        left: 35px;
+        top: 2px;
+        &__part{
+            padding: 0;
+            display: inline-block;
+        }
+    }
+    .e-commerce{
+        margin: 60px;
+        margin-top: 80px;
+        padding: 0;
+        &__about{
+           width: 100%;
+        }
+    }
+    .services{
+        margin: 0 60px;
+        &__border{
+            margin-bottom: -31em;
+            width: 59.5em;
+            right: 33px;
+        }
+        &__border-white{
+            margin-bottom: -32.4em;
+            left: 3.5em;
+            width: 56em;
+        }
+    }
+    .addition{
+        @include mixins.flex(space-between, flex-start, 60px, row);
+        
+    }
+    .menu{
+        &__benefit{
+            width: 23.5em;
+        }
+    }
+    .publications{
+        @include mixins.flex(center, flex-start, 30px, column);
+        margin: 0 60px;
+        margin-top: 100px;
+    }
+    
+    .img, .cover3{
+        width: 280px;
+        height: 12.5em;
+        padding: 0;
+    }
+    .img-resize{
+        display: none;
+    }
+    .txt{
+        padding: 30px;
+        &__story{
+            width: 15.8em;
+        }
+        .main__title{
+            width: 15.8em;
+        }
+    }
+    .origin{
+        padding:0;
+    }
+    .row{
+        @include mixins.flex(center, flex-start, 0, row);
+    }
+    .full{
+        @include mixins.flex(space-between, flex-start, 0, row);
+    }
+    footer{
+        @include mixins.flex(space-between, center, 0, row);
+        margin: 30px 60px;
+        margin-top: 60px;
+        padding: 0px;
+    }
+    .address, .contacts{
+        @include mixins.flex(unset, center, 6px, row);
+    }
+    .address{
+        &__link{
+            padding: 0;
+        }
+    }
+    .contacts{
+        &__foot{
+            padding: 0;
+            margin-bottom: 60px; 
+        }
+    }
+    .part{
+        @include mixins.flex(flex-start, flex-start, 21px, column);
+    }
+}
+@media screen and (min-width: 1400px) and (max-width: 1700px){
+    .dropdown{
+        left: 15em;
+    }
+    .e-commerce{
+        margin: 60px 180px;
+        margin-top: 80px;
+    }
+    .services{
+        margin: 0  180px;
+        &__border{
+            margin-bottom: -29.2em;
+            width:  85em;;
+            right: 33px;
+        }
+        &__border-white{
+            margin-bottom: -30.5em;
+            left: 3.5em;
+            width: 82em;
+        }
+    }
+    .menu{
+        &__benefit{
+            width: 28.1em;
+        }
+    }
+    .img, .cover3{
+        width: 26em;
+        object-fit: cover;
+        border-radius: 8px 8px 0px 0px;
+    }
+    .txt{
+        width: 22em;
+        &__story{
+            width: 25.5em;
+        }
+    }
+    .full, .row{
+        @include mixins.flex(center, flex-start, 30px, row);
+    }
+}
+
+@media screen and (min-width: 1700px) and (max-width: 1950px){
+    header{
+        padding: 50px 160px;
+    }
+    .dropdown{
+        left: 44em;
+    }
+    .e-commerce{
+        margin: 60px 280px;
+    }
+    .services{
+        margin: 0 280px;
+        &__border{
+            margin-bottom: -26.1em;
+            width: 115em;
+        }
+        &__border-white{
+            width: 113em;
+            margin-bottom: -27.4em;
+        }
+    }
+    .menu{
+        width: 41em;
+        &__benefit{
+            width: 100%;
+            text-align: start;
+        }
+    }
+    .publications{
+        margin: 30px 160px;
+        margin-top: 100px;
+    }
+    
+    .img, .cover3{
+        width: 32em;
+        border-radius: 8px 8px 0px 0px;
+        object-fit: cover;
+    }
+    .txt{
+        &__story{
+            width: 32em;
+        }
+        .main__title{
+           width: 31em;
+        }
+    }
+    .full, .row{
+        @include mixins.flex(center, flex-start, 30px, row);
+    }
+    footer{
+        margin: 30px 160px;
+        margin-top: 60px;
+    }
+}
