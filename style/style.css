@@ -176,18 +176,19 @@ header {
 }
 .services__border {
   position: absolute;
-  width: 80%;
+  width: 88%;
+  left: 19px;
   border: 6px solid #CACADB;
   border-radius: 0px 0px 12px 12px;
-  margin-bottom: -67.1em;
+  margin-bottom: -63.9em;
 }
 .services__border-white {
   position: absolute;
-  width: 70%;
+  width: 81%;
   border: 6px solid #E7E7F2;
   border-radius: 0px 0px 12px 12px;
-  margin-bottom: -68.5em;
-  left: 3.2em;
+  margin-bottom: -65.3em;
+  left: 2.2em;
 }
 
 .addition {
@@ -467,10 +468,12 @@ footer {
   }
   .services__border {
     margin-bottom: -37.4em;
+    width: 94%;
   }
   .services__border-white {
     margin-bottom: -38.8em;
-    left: 6em;
+    left: 2em;
+    width: 91%;
   }
   .addition {
     display: flex;
@@ -606,13 +609,13 @@ footer {
   }
   .services__border {
     margin-bottom: -31em;
-    width: 59.5em;
+    width: 61em;
     right: 33px;
   }
   .services__border-white {
     margin-bottom: -32.4em;
-    left: 3.5em;
-    width: 56em;
+    left: 2em;
+    width: 59.5em;
   }
   .addition {
     display: flex;
@@ -712,13 +715,13 @@ footer {
   }
   .services__border {
     margin-bottom: -29.2em;
-    width: 85em;
+    width: 87em;
     right: 33px;
   }
   .services__border-white {
     margin-bottom: -30.5em;
-    left: 3.5em;
-    width: 82em;
+    left: 2em;
+    width: 85.5em;
   }
   .menu__benefit {
     width: 28.1em;
